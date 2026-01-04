@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Seating Arrangement</h1>
+
+    <button onclick="showstudents(2)">seat 2</button>
+    <button onclick="showstudents(1)">seat 3</button>
+    <button onclick="showstudents(0)">seat 1</button>
+    <button onclick="showstudents(3)">seat 4</button>
+
+    <p id="output"></p>
+    <script>
+         students = ["anurag", "ravi", "kunal", "rajveer"];
+
+        function showstudents(index){
+            document.getElementById("output").innerText="student is at " + students[index];
+        }
+    </script>
+</body>
+</html>

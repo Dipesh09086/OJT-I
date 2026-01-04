@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Gokuldham Result</h1>
+
+    <button onclick="showresult(2)">jetha lal</button>
+    <button onclick="showresult(1)">mehta sahab</button>
+    <button onclick="showresult(0)">tapu</button>
+    <button onclick="showresult(3)">bhide</button>
+
+    
+
+    <p id="output">first select the name above</p>
+    <script>
+         exam = [
+            {chemistry:"75/100", physics:"54/100", maths:"50/100"},
+            {chemistry:"49/100", physics:"49/100", maths:"70/100"},
+            {chemistry:"56/100", physics:"36/100", maths:"40/100"},
+            {chemistry:"47/100", physics:"23/100", maths:"20/100"}
+         ];
+
+        function showresult(index){
+            document.getElementById("output").innerText="chemistry :" + exam[index].chemistry+ 
+            "physics :" + exam[index].physics +
+            "maths :" + exam[index].maths
+
+            if(chemistry < 33 || physics < 33 || maths < 33){
+            document.getElementById("output").innerText = "fail"
+            }
+        }
+    </script>
+</body>
+</html>
