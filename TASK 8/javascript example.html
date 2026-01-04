@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dine Option</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 320px;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .yes {
+            background: #28a745;
+            color: white;
+        }
+
+        .no {
+            background: #dc3545;
+            color: white;
+        }
+
+        select {
+            padding: 10px;
+            width: 100%;
+            margin-top: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        #menuBox {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2 id="text">Do you want to go for dine?</h2>
+
+    <button class="yes" onclick="yesClick()">Yes</button>
+    <button class="no" onclick="noClick()">No</button>
+
+    <div id="menuBox">
+        <h3>Select your dish</h3>
+        <select>
+            <option>Select Dish</option>
+            <option>Paneer Butter Masala</option>
+            <option>Butter Naan</option>
+            <option>Dal Tadka</option>
+            <option>Veg Biryani</option>
+            <option>Masala Dosa</option>
+            <option>Chole Bhature</option>
+        </select>
+    </div>
+</div>
+
+<script>
+    function yesClick() {
+        document.getElementById("text").innerText =
+            "Today available tables are 20!";
+        document.getElementById("text").style.color = "green";
+        document.getElementById("menuBox").style.display = "block";
+    }
+
+    function noClick() {
+        document.getElementById("text").innerText =
+            "We have delivery facilities too.";
+        document.getElementById("text").style.color = "red";
+        document.getElementById("menuBox").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

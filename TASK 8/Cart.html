@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #fffaf5;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4d2d;
+            margin-bottom: 30px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .cart-item h3 {
+            margin: 0;
+        }
+
+        .price {
+            color: #ff4d2d;
+            font-weight: bold;
+        }
+
+        .total {
+            text-align: right;
+            font-size: 18px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff4d2d;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 25px;
+        }
+
+        .btn:hover {
+            background: #e63e22;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Your Cart</h1>
+
+    <!-- Fake Saved Items -->
+    <div class="cart-item">
+        <h3>Punjabi Thali</h3>
+        <span class="price">₹160</span>
+    </div>
+
+    <div class="cart-item">
+        <h3>Chole Bhature</h3>
+        <span class="price">₹120</span>
+    </div>
+
+    <div class="cart-item">
+        <h3>Paneer Tikka</h3>
+        <span class="price">₹100</span>
+    </div>
+
+    <div class="total">
+        Total Amount: ₹380
+    </div>
+
+    <div class="center">
+        <a href="order-success.html" class="btn">PLACE ORDER</a>
+    </div>
+
+</body>
+</html>
