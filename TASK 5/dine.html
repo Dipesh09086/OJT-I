@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dine Option</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 360px;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .yes {
+            background: #28a745;
+            color: white;
+        }
+
+        .no {
+            background: #dc3545;
+            color: white;
+        }
+
+        #menuBox {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .dropdowns {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        select {
+            padding: 10px;
+            width: 100%;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2 id="text">Do you want to go for dine?</h2>
+
+    <button class="yes" onclick="yesClick()">Yes</button>
+    <button class="no" onclick="noClick()">No</button>
+
+    <div id="menuBox">
+        <h3>Select Category & Dish</h3>
+
+        <div class="dropdowns">
+            <!-- Category -->
+            <select id="category" onchange="loadDishes()">
+                <option value="">Select Category</option>
+                <option value="punjabi">Punjabi</option>
+                <option value="gujarati">Gujarati</option>
+                <option value="rajasthani">Rajasthani</option>
+            </select>
+
+            <!-- Dishes -->
+            <select id="dishes">
+                <option>Select Dish</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<script>
+    function yesClick() {
+        document.getElementById("text").innerText =
+            "Today available tables are 20!";
+        document.getElementById("text").style.color = "green";
+        document.getElementById("menuBox").style.display = "block";
+    }
+
+    function noClick() {
+        document.getElementById("text").innerText =
+            "We have delivery facilities too.";
+        document.getElementById("text").style.color = "red";
+        document.getElementById("menuBox").style.display = "none";
+    }
+
+    function loadDishes() {
+        category = document.getElementById("category").value;
+         dishes = document.getElementById("dishes");
+
+        dishes.innerHTML = "<option>Select Dish</option>";
+
+        if (category === "punjabi") {
+            dishes.innerHTML += `
+                <option>Paneer Butter Masala</option>
+                <option>Butter Naan</option>
+                <option>Chole Bhature</option>
+                <option>Dal Makhani</option>
+            `;
+        }
+
+        if (category === "gujarati") {
+            dishes.innerHTML += `
+                <option>Gujarati Thali</option>
+                <option>Dhokla</option>
+                <option>Thepla</option>
+                <option>Undhiyu</option>
+            `;
+        }
+
+        if (category === "rajasthani") {
+            dishes.innerHTML += `
+                <option>Dal Baati Churma</option>
+                <option>Gatte ki Sabzi</option>
+                <option>Ker Sangri</option>
+                <option>Bajra Roti</option>
+            `;
+        }
+    }
+</script>
+
+</body>
+</html>
