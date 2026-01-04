@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOID-OS // Quantum Terminal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;700&family=Space+Grotesk:wght@300;700&display=swap');
+        
+        :root { --neon: #00ff41; --panel: rgba(10, 10, 10, 0.8); }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+        
+        .code-font { font-family: 'JetBrains Mono', monospace; }
+        
+        .bg-matrix {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(0, 255, 65, 0.05) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(0, 255, 65, 0.03) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        .navbar-terminal {
+            background: var(--panel);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 255, 65, 0.1);
+            padding: 15px 0;
+        }
+
+        .iso-card {
+            background: var(--panel);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+            transition: 0.5s;
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.5);
+        }
+
+        .iso-card:hover {
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+            border-color: var(--neon);
+            box-shadow: 0 0 40px rgba(0, 255, 65, 0.1);
+        }
+
+        .status-dot {
+            width: 8px; height: 8px;
+            background: var(--neon);
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 10px var(--neon);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        .btn-terminal {
+            background: transparent;
+            color: var(--neon);
+            border: 1px solid var(--neon);
+            padding: 10px 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono';
+            transition: 0.3s;
+        }
+
+        .btn-terminal:hover {
+            background: var(--neon);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon);
+        }
+
+        .terminal-header {
+            background: rgba(255,255,255,0.05);
+            margin: -2.5rem -2.5rem 2rem -2.5rem;
+            padding: 10px 20px;
+            border-radius: 20px 20px 0 0;
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.1); }
+
+        .scanline {
+            width: 100%; height: 100px;
+            background: linear-gradient(0deg, transparent 0%, rgba(0, 255, 65, 0.02) 50%, transparent 100%);
+            position: fixed;
+            top: -100px;
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% { top: -100px; }
+            100% { top: 100vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-matrix"></div>
+    <div class="scanline"></div>
+
+    <nav class="navbar navbar-terminal sticky-top">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand code-font fw-bold" href="#">
+                <span class="text-secondary">&lt;</span>VOID-OS<span class="text-secondary">/&gt;</span>
+            </a>
+            <div class="d-flex align-items-center gap-4">
+                <small class="code-font text-secondary d-none d-md-block">LATENCY: 14MS</small>
+                <div class="d-flex gap-2">
+                    <span class="status-dot"></span>
+                    <small class="code-font">ACTIVE_NODE</small>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5 mt-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <h6 class="code-font text-success mb-3">VERSION_5.3.0_STABLE</h6>
+                <h1 class="display-2 fw-bold mb-4">DECENTRALIZE<br>EVERYTHING.</h1>
+                <p class="lead text-secondary mb-5 fs-4">A high-performance interface for managing distributed quantum ledger operations with zero-trust architecture.</p>
+                <div class="d-flex gap-3">
+                    <button class="btn btn-terminal">Initialize Shell</button>
+                    <button class="btn btn-outline-secondary rounded-0 code-font">View Source</button>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="iso-card">
+                    <div class="terminal-header">
+                        <div class="dot" style="background: #ff5f56;"></div>
+                        <div class="dot" style="background: #ffbd2e;"></div>
+                        <div class="dot" style="background: #27c93f;"></div>
+                    </div>
+                    <div class="code-font small text-success">
+                        <p class="mb-1">> Booting system...</p>
+                        <p class="mb-1">> Loading quantum modules...</p>
+                        <p class="mb-1">> Encryption keys verified.</p>
+                        <p class="mb-4 text-white">> System ready. Awaiting command_</p>
+                        
+                        <div class="p-3 bg-black rounded border border-secondary border-opacity-25">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Network Load</span>
+                                <span>82%</span>
+                            </div>
+                            <div class="progress bg-dark" style="height: 4px;">
+                                <div class="progress-bar bg-success" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-5">
+            <div class="col-md-4">
+                <div class="iso-card p-4">
+                    <i class="bi bi-shield-lock-fill fs-1 text-success mb-3"></i>
+                    <h5 class="fw-bold">Zero Trust</h5>
+                    <p class="text-secondary small">End-to-end encrypted hardware authentication for every session.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="iso-card p-4">
+                    <i class="bi bi-lightning-fill fs-1 text-warning mb-3"></i>
+                    <h5 class="fw-bold">Warp Speed</h5>
+                    <p class="text-secondary small">Optimized routing protocols that bypass traditional DNS bottlenecks.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="iso-card p-4 text-center">
+                    <div class="spinner-border text-success mb-3" role="status"></div>
+                    <h5 class="fw-bold">Auto-Scaling</h5>
+                    <p class="text-secondary small">Dynamic resource allocation across 40+ global regions.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-5 mt-5 border-top border-secondary border-opacity-10">
+        <div class="container d-flex justify-content-between align-items-center">
+            <p class="code-font text-secondary small mb-0">© 2025 VOID-OS CORE ENGINE</p>
+            <div class="d-flex gap-4">
+                <i class="bi bi-cpu fs-5 text-secondary"></i>
+                <i class="bi bi-hdd-network fs-5 text-secondary"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

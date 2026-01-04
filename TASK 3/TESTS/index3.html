@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X-CORE // Digital Evolution</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #050505; color: #ffffff; overflow-x: hidden; }
+        .navbar-floating { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 800px; background: rgba(15, 15, 15, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; z-index: 2000; padding: 10px 25px; }
+        .hero-title { font-size: calc(2rem + 5vw); font-weight: 700; line-height: 1; letter-spacing: -2px; }
+        .glow-card { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 24px; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; }
+        .glow-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at var(--x) var(--y), rgba(111, 66, 193, 0.15) 0%, transparent 50%); opacity: 0; transition: opacity 0.3s; }
+        .glow-card:hover::before { opacity: 1; }
+        .glow-card:hover { border-color: #6f42c1; transform: scale(1.02); }
+        .feature-dot { width: 12px; height: 12px; background: #6f42c1; border-radius: 50%; display: inline-block; box-shadow: 0 0 15px #6f42c1; }
+        .nav-link { font-weight: 500; color: #888 !important; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: #fff !important; }
+        .btn-neon { background: #fff; color: #000; border-radius: 100px; font-weight: 700; padding: 12px 35px; border: none; transition: 0.3s; }
+        .btn-neon:hover { background: #6f42c1; color: #fff; box-shadow: 0 0 30px rgba(111, 66, 193, 0.4); }
+        section { padding: 120px 0; }
+        .stat-val { font-size: 3.5rem; font-weight: 700; color: #6f42c1; }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#floatingNav">
+
+    <nav id="floatingNav" class="navbar navbar-expand navbar-dark navbar-floating">
+        <ul class="navbar-nav w-100 justify-content-between align-items-center">
+            <li class="nav-item"><a class="navbar-brand fw-bold m-0" href="#">X-CORE</a></li>
+            <div class="d-flex gap-4">
+                <li class="nav-item"><a class="nav-link px-0" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link px-0" href="#tech">Tech</a></li>
+                <li class="nav-item"><a class="nav-link px-0" href="#stats">Stats</a></li>
+            </div>
+            <li class="nav-item"><a href="#contact" class="btn btn-sm btn-neon d-none d-md-block">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-8">
+                    <span class="badge border border-secondary rounded-pill px-3 py-2 mb-4 text-secondary"><span class="feature-dot me-2"></span> System Online: v2.0.5</span>
+                    <h1 class="hero-title mb-4">WE CODE THE<br><span class="text-secondary text-opacity-50">UNIMAGINABLE</span></h1>
+                    <p class="lead text-secondary mb-5 fs-4">A high-performance framework for building industrial-grade digital architectures.</p>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-neon btn-lg">Deploy Now</button>
+                        <button class="btn btn-outline-secondary btn-lg rounded-pill px-4">Documentation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="bg-body-tertiary border-top border-bottom border-secondary border-opacity-10">
+        <div class="container">
+            <div class="row mb-5 text-center">
+                <div class="col-lg-6 mx-auto">
+                    <h2 class="display-5 fw-bold">Core Stack</h2>
+                    <p class="text-secondary">Modular components designed for extreme scalability.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="glow-card p-5 h-100">
+                        <i class="bi bi-cpu fs-1 mb-4 text-primary"></i>
+                        <h4>Neural Logic</h4>
+                        <p class="text-secondary">Self-optimizing algorithms that adapt to user behavior patterns.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glow-card p-5 h-100">
+                        <i class="bi bi-shield-lock fs-1 mb-4 text-success"></i>
+                        <h4>Quantum Guard</h4>
+                        <p class="text-secondary">Next-level security protocols powered by end-to-end encryption.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="glow-card p-5 h-100">
+                        <i class="bi bi-terminal fs-1 mb-4 text-info"></i>
+                        <h4>Edge Runtime</h4>
+                        <p class="text-secondary">Global delivery network with sub-5ms latency across all nodes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="container">
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="stat-val">99.9<span class="fs-2">%</span></div>
+                <div class="text-uppercase text-secondary small tracking-widest">Uptime Reliability</div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-val">1.2<span class="fs-2">M</span></div>
+                <div class="text-uppercase text-secondary small tracking-widest">Global Requests/Sec</div>
+            </div>
+            <div class="col-md-4">
+                <div class="stat-val">0.0<span class="fs-2">ms</span></div>
+                <div class="text-uppercase text-secondary small tracking-widest">Data Loss Ratio</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <div class="glow-card p-5 overflow-hidden">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-6 fw-bold">Ready to transcend?</h2>
+                    <p class="text-secondary">Join the elite developers building on X-CORE.</p>
+                </div>
+                <div class="col-lg-6">
+                    <form class="row g-3">
+                        <div class="col-12">
+                            <input type="email" class="form-control bg-transparent border-secondary py-3 px-4 rounded-pill" placeholder="Enter your node address (Email)">
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-neon w-100 py-3 mt-2">Initialize Connection</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 text-center text-secondary border-top border-secondary border-opacity-10">
+        <small>&copy; 2025 X-CORE TECHNOLOGIES. ALL RIGHTS RESERVED.</small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelectorAll('.glow-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--y', `${e.clientY - rect.top}px`);
+            });
+        });
+    </script>
+</body>
+</html>

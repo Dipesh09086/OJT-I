@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Nexus Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        :root { --glass: rgba(255, 255, 255, 0.05); }
+        body { font-family: 'Inter', sans-serif; background: #0f172a; }
+        .sidebar { width: 280px; height: 100vh; position: fixed; background: #1e293b; transition: 0.3s; z-index: 1000; }
+        .main-content { margin-left: 280px; padding: 2rem; transition: 0.3s; }
+        .glass-card { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 1.5rem; }
+        .stat-icon { width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .nav-link { color: #94a3b8; padding: 0.8rem 1.5rem; border-radius: 0.75rem; margin-bottom: 0.5rem; }
+        .nav-link:hover, .nav-link.active { background: #334155; color: #fff; }
+        @media (max-width: 992px) { .sidebar { transform: translateX(-100%); } .main-content { margin-left: 0; } }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar d-none d-lg-block shadow border-end border-secondary">
+        <div class="p-4">
+            <h3 class="text-primary fw-bold mb-4"><i class="bi bi-infinity"></i> NEXUS AI</h3>
+            <nav class="nav flex-column">
+                <a class="nav-link active" href="#"><i class="bi bi-grid-1x2-fill me-2"></i> Dashboard</a>
+                <a class="nav-link" href="#"><i class="bi bi-cpu me-2"></i> Model Training</a>
+                <a class="nav-link" href="#"><i class="bi bi-database me-2"></i> Datasets</a>
+                <a class="nav-link" href="#"><i class="bi bi-graph-up me-2"></i> Analytics</a>
+                <hr class="text-secondary">
+                <a class="nav-link" href="#"><i class="bi bi-gear me-2"></i> Settings</a>
+            </nav>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="fw-bold mb-0">System Overview</h2>
+                <p class="text-secondary">Welcome back, Admin</p>
+            </div>
+            <div class="d-flex gap-3">
+                <button class="btn glass-card px-3" onclick="toggleTheme()"><i class="bi bi-sun" id="themeIcon"></i></button>
+                <div class="dropdown">
+                    <img src="https://i.pravatar.cc/40" class="rounded-circle cursor-pointer" data-bs-toggle="dropdown">
+                    <ul class="dropdown-menu dropdown-menu-end shadow">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-3">
+                <div class="glass-card p-4">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="stat-icon bg-primary-subtle text-primary"><i class="bi bi-cpu"></i></div>
+                        <span class="badge bg-success-subtle text-success">+12%</span>
+                    </div>
+                    <h6 class="text-secondary">CPU Usage</h6>
+                    <h3 class="fw-bold">42.5%</h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="glass-card p-4 border-primary">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="stat-icon bg-info-subtle text-info"><i class="bi bi-memory"></i></div>
+                        <span class="badge bg-danger-subtle text-danger">-3%</span>
+                    </div>
+                    <h6 class="text-secondary">RAM Usage</h6>
+                    <h3 class="fw-bold">8.2 GB</h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="glass-card p-4">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="stat-icon bg-warning-subtle text-warning"><i class="bi bi-hdd-network"></i></div>
+                    </div>
+                    <h6 class="text-secondary">Network Traffic</h6>
+                    <h3 class="fw-bold">124 mb/s</h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="glass-card p-4">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div class="stat-icon bg-danger-subtle text-danger"><i class="bi bi-bug"></i></div>
+                    </div>
+                    <h6 class="text-secondary">Active Errors</h6>
+                    <h3 class="fw-bold">02</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-8">
+                <div class="glass-card p-4 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="fw-bold">Training Velocity</h5>
+                        <select class="form-select form-select-sm w-auto bg-transparent border-secondary text-white">
+                            <option>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                        </select>
+                    </div>
+                    <div style="height: 300px; display: flex; align-items: flex-end; gap: 10px;">
+                        <div class="bg-primary opacity-25 rounded-top w-100" style="height: 60%;"></div>
+                        <div class="bg-primary opacity-50 rounded-top w-100" style="height: 80%;"></div>
+                        <div class="bg-primary rounded-top w-100" style="height: 40%;"></div>
+                        <div class="bg-primary opacity-75 rounded-top w-100" style="height: 90%;"></div>
+                        <div class="bg-primary rounded-top w-100" style="height: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="glass-card p-4 h-100">
+                    <h5 class="fw-bold mb-4">Quick Actions</h5>
+                    <button class="btn btn-primary w-100 mb-3 py-2"><i class="bi bi-plus-circle me-2"></i> New Training Job</button>
+                    <button class="btn btn-outline-secondary w-100 mb-3 py-2"><i class="bi bi-cloud-download me-2"></i> Export Data</button>
+                    <div class="alert alert-info bg-info-subtle border-0 mb-0">
+                        <small><i class="bi bi-info-circle me-2"></i> System update scheduled for 02:00 AM UTC.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="position-fixed bottom-0 end-0 p-4">
+        <button class="btn btn-primary rounded-circle shadow-lg" style="width: 60px; height: 60px;" data-bs-toggle="modal" data-bs-target="#aiChat">
+            <i class="bi bi-chat-dots-fill fs-4"></i>
+        </button>
+    </div>
+
+    <div class="modal fade" id="aiChat" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-card border-0">
+                <div class="modal-header border-bottom border-secondary">
+                    <h5 class="modal-title"><i class="bi bi-robot me-2 text-primary"></i>AI Assistant</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="p-3 bg-secondary-subtle rounded mb-3">Hello! How can I help you optimize your models today?</div>
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-transparent border-secondary text-white" placeholder="Type a command...">
+                        <button class="btn btn-primary"><i class="bi bi-send"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-bs-theme');
+            const target = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-bs-theme', target);
+            document.getElementById('themeIcon').className = target === 'dark' ? 'bi bi-sun' : 'bi bi-moon-stars';
+        }
+    </script>
+</body>
+</html>

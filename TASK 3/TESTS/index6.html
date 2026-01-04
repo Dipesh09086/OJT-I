@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETHER // Spatial Systems</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap');
+        
+        body {
+            font-family: 'Syne', sans-serif;
+            background-color: #080808;
+            color: #fff;
+            scroll-behavior: smooth;
+        }
+
+        .noise-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://grainy-gradients.vercel.app/noise.svg');
+            opacity: 0.05;
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .sticky-wrapper {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .glass-sidebar {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            width: 80px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            z-index: 1050;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 15vw, 12rem);
+            font-weight: 800;
+            line-height: 0.8;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 40px;
+            padding: 4rem;
+            margin-bottom: 2rem;
+            transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .content-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: scale(0.98);
+        }
+
+        .btn-aether {
+            background: #fff;
+            color: #000;
+            border-radius: 0;
+            padding: 20px 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: none;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+        }
+
+        .nav-vertical-link {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            color: #555;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+        }
+
+        .nav-vertical-link:hover, .nav-vertical-link.active {
+            color: #fff;
+        }
+
+        .circle-blur {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="noise-overlay"></div>
+    <div class="circle-blur" style="top: -10%; right: -10%;"></div>
+    <div class="circle-blur" style="bottom: -10%; left: -10%;"></div>
+
+    <aside class="glass-sidebar d-none d-md-flex flex-column align-items-center justify-content-between py-5">
+        <div class="fw-bold fs-4">A.</div>
+        <div class="d-flex flex-column gap-5">
+            <a href="#section1" class="nav-vertical-link active">CORE</a>
+            <a href="#section2" class="nav-vertical-link">DATA</a>
+            <a href="#section3" class="nav-vertical-link">SYNC</a>
+        </div>
+        <div class="d-flex flex-column gap-3">
+            <i class="bi bi-github"></i>
+            <i class="bi bi-twitter-x"></i>
+        </div>
+    </aside>
+
+    <main class="ms-md-5 ps-md-5">
+        <section id="section1" class="sticky-wrapper">
+            <div class="container-fluid px-5">
+                <div class="row align-items-end">
+                    <div class="col-12">
+                        <span class="text-secondary fw-bold mb-3 d-block">01 // INITIALIZING</span>
+                        <h1 class="hero-title">BEYOND<br><span class="text-outline">REALITY.</span></h1>
+                        <div class="d-flex mt-5 align-items-center gap-5">
+                            <button class="btn btn-aether">Enter Void</button>
+                            <p class="text-secondary mb-0 w-25 d-none d-lg-block">Building spatial computing interfaces for the next era of information.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section2" class="py-5">
+            <div class="container-fluid px-5">
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="content-card">
+                            <h2 class="display-4 fw-bold mb-4">Neural Infrastructure</h2>
+                            <p class="text-secondary fs-5 mb-5">Hamara framework data ko visually interpret karta hai, jisse complex systems ko samajhna aasaan ho jata hai.</p>
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <h3 class="fw-bold">0.4ms</h3>
+                                    <small class="text-secondary text-uppercase">Latency</small>
+                                </div>
+                                <div class="col-md-4">
+                                    <h3 class="fw-bold">99.9%</h3>
+                                    <small class="text-secondary text-uppercase">Efficiency</small>
+                                </div>
+                                <div class="col-md-4">
+                                    <h3 class="fw-bold">∞</h3>
+                                    <small class="text-secondary text-uppercase">Scalability</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="content-card h-100 d-flex flex-column justify-content-center border-info border-opacity-25">
+                            <i class="bi bi-qr-code-scan display-1 mb-4 text-info"></i>
+                            <h4>Instant Sync</h4>
+                            <p class="text-secondary">Scan and connect your neural node to the global cloud instantly.</p>
+                            <button class="btn btn-outline-info rounded-pill mt-4">Scan Node</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="section3" class="py-5 mb-5">
+            <div class="container-fluid px-5">
+                <div class="content-card bg-white text-dark py-5">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7">
+                            <h2 class="display-3 fw-bold">Ready to transcend the grid?</h2>
+                        </div>
+                        <div class="col-lg-5 text-lg-end">
+                            <button class="btn btn-dark btn-lg px-5 py-3 rounded-0 fw-bold">JOIN BETA ACCESS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-5 px-5 container-fluid">
+            <div class="d-flex justify-content-between align-items-center border-top border-secondary border-opacity-25 pt-5">
+                <div class="fw-bold">AETHER // 2025</div>
+                <div class="d-flex gap-4">
+                    <small class="text-secondary">SYSTEM STATUS: OPTIMAL</small>
+                    <small class="text-secondary">ENCRYPTION: ACTIVE</small>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-vertical-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA // Digital Architecture</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #030712;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .bg-gradient-blur {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 40%);
+            z-index: -1;
+        }
+
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card-neo {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 28px;
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .card-neo:hover {
+            background: rgba(30, 41, 59, 0.6);
+            border-color: rgba(99, 102, 241, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 700;
+            background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.4) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -2px;
+        }
+
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 16px;
+            padding: 12px 28px;
+            transition: 0.3s;
+        }
+
+        .btn-glass:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .project-img {
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .badge-ai {
+            background: linear-gradient(90deg, #6366f1, #ec4899);
+            border: none;
+            padding: 6px 16px;
+        }
+
+        .sidebar-indicator {
+            width: 4px;
+            height: 24px;
+            background: #6366f1;
+            border-radius: 10px;
+            display: inline-block;
+            margin-right: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-gradient-blur"></div>
+
+    <nav class="navbar navbar-expand-lg sticky-top glass-nav py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4" href="#">NOVA.</a>
+            <div class="d-flex align-items-center gap-3">
+                <div class="d-none d-md-flex gap-4 me-4">
+                    <a href="#vision" class="text-decoration-none text-white-50 small text-uppercase fw-bold">Vision</a>
+                    <a href="#studio" class="text-decoration-none text-white-50 small text-uppercase fw-bold">Studio</a>
+                </div>
+                <button class="btn btn-glass btn-sm" data-bs-toggle="offcanvas" data-bs-target="#menuSidebar">
+                    <i class="bi bi-grid-3x3-gap-fill"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-end bg-dark border-start border-secondary border-opacity-25" id="menuSidebar">
+        <div class="offcanvas-header p-5">
+            <h5 class="offcanvas-title fw-bold">EXPLORE</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body p-5">
+            <div class="d-grid gap-4">
+                <a href="#" class="fs-2 fw-bold text-decoration-none text-white">Interface</a>
+                <a href="#" class="fs-2 fw-bold text-decoration-none text-white">Identity</a>
+                <a href="#" class="fs-2 fw-bold text-decoration-none text-white">Motion</a>
+                <hr>
+                <div class="d-flex gap-3">
+                    <i class="bi bi-instagram fs-4"></i>
+                    <i class="bi bi-twitter-x fs-4"></i>
+                    <i class="bi bi-dribbble fs-4"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-5 mt-lg-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+                    <span class="badge badge-ai rounded-pill mb-4">ESTABLISHED 2025</span>
+                    <h1 class="hero-title">WE DESIGN<br>QUANTUM INTERFACES</h1>
+                    <p class="lead text-secondary w-75 mt-4 mb-5 fs-4">Nova is a boutique studio focused on high-fidelity user experiences and digital storytelling.</p>
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-glass px-5 py-3">Initiate Project</button>
+                        <button class="btn btn-link text-white text-decoration-none">Watch Showreel <i class="bi bi-play-circle ms-2"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="studio" class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="card card-neo p-5 h-100">
+                        <div class="d-flex align-items-center mb-4">
+                            <span class="sidebar-indicator"></span>
+                            <h3 class="m-0">Adaptive Core</h3>
+                        </div>
+                        <p class="text-secondary fs-5">System components that evolve based on user interaction density and environment variables.</p>
+                        <div class="mt-auto pt-5">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800" class="img-fluid rounded-4 shadow-lg" alt="Abstract 3D">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="card card-neo p-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">Real-time Rendering</h5>
+                                        <p class="text-secondary m-0">90FPS Motion Graphics</p>
+                                    </div>
+                                    <div class="fs-1 text-info"><i class="bi bi-gpu-card"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card card-neo p-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">Neural Integration</h5>
+                                        <p class="text-secondary m-0">Predictive UX Flow</p>
+                                    </div>
+                                    <div class="fs-1 text-primary"><i class="bi bi-cpu"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card card-neo p-5">
+                                <h3>The Philosophy</h3>
+                                <p class="text-secondary">Hum sirf code nahi likhte, hum digital environments banate hain jo breathe karte hain.</p>
+                                <div class="progress bg-secondary bg-opacity-10 mt-4" style="height: 6px;">
+                                    <div class="progress-bar bg-white" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 border-top border-secondary border-opacity-10 mt-5">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+            <p class="text-secondary m-0">&copy; 2025 NOVA STUDIO. BUILT WITH BOOTSTRAP 5.3 ENGINE.</p>
+            <div class="d-flex gap-4">
+                <a href="#" class="text-white-50 text-decoration-none small">PRIVACY</a>
+                <a href="#" class="text-white-50 text-decoration-none small">SYSTEM STATUS</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

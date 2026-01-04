@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORBIT // Advanced Systems</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #000;
+            color: #fff;
+            letter-spacing: -0.02em;
+        }
+
+        .bento-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 1.5rem;
+        }
+
+        .bento-item {
+            background: #0a0a0a;
+            border: 1px solid #1a1a1a;
+            border-radius: 32px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-item:hover {
+            border-color: #333;
+            background: #0f0f0f;
+            transform: scale(0.99);
+        }
+
+        .accent-purple { color: #a855f7; }
+        .accent-blue { color: #3b82f6; }
+        .accent-green { color: #22c55e; }
+
+        .hero-text {
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 0.9;
+            background: linear-gradient(180deg, #fff 0%, #444 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-pill {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+            padding: 8px 20px;
+            font-size: 0.85rem;
+        }
+
+        .btn-action {
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            background: #fff;
+            color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-action:hover {
+            transform: rotate(15deg);
+            background: #a855f7;
+            color: #fff;
+        }
+
+        @media (max-width: 992px) {
+            .bento-container { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 576px) {
+            .bento-container { grid-template-columns: 1fr; }
+            .hero-text { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar py-4">
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand fw-bold fs-4 m-0" href="#">ORBIT<span class="accent-purple">.</span></a>
+            <div class="d-flex gap-3 align-items-center">
+                <span class="glass-pill d-none d-md-block">System: Stable</span>
+                <button class="btn-action" data-bs-toggle="offcanvas" data-bs-target="#navSide">
+                    <i class="bi bi-list-nested fs-4"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-top h-100 bg-black border-0" tabindex="-1" id="navSide">
+        <div class="container py-5">
+            <div class="d-flex justify-content-between mb-5">
+                <h2 class="fw-bold">NAVIGATION</h2>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="row g-5">
+                <div class="col-md-6">
+                    <ul class="list-unstyled d-grid gap-3">
+                        <li><a href="#" class="display-3 fw-bold text-decoration-none text-white hover-opacity">Engine</a></li>
+                        <li><a href="#" class="display-3 fw-bold text-decoration-none text-white opacity-25">Nexus</a></li>
+                        <li><a href="#" class="display-3 fw-bold text-decoration-none text-white opacity-25">Vault</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container py-5">
+        <div class="bento-container">
+            
+            <div class="bento-item col-span-2 col-lg-3 row-span-2 bg-gradient" style="grid-column: span 3; grid-row: span 2;">
+                <h1 class="hero-text mb-4">REDEFINING<br>DIGITAL ARCH.</h1>
+                <p class="text-secondary fs-4 w-75">Building specialized software for the next generation of data-driven enterprises.</p>
+                <div class="mt-5 d-flex gap-3">
+                    <button class="btn btn-light rounded-pill px-4 py-2 fw-bold">Get Started</button>
+                    <button class="btn btn-outline-secondary rounded-pill px-4 py-2">Read Whitepaper</button>
+                </div>
+            </div>
+
+            <div class="bento-item">
+                <i class="bi bi-cpu accent-purple fs-1"></i>
+                <h4 class="mt-4">Core v2</h4>
+                <p class="text-secondary small">Neural engine processing 4TB/s data streams.</p>
+            </div>
+
+            <div class="bento-item">
+                <i class="bi bi-shield-check accent-green fs-1"></i>
+                <h4 class="mt-4">Secured</h4>
+                <p class="text-secondary small">Military-grade vault protocols enabled.</p>
+            </div>
+
+            <div class="bento-item" style="grid-column: span 2;">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h4 class="m-0">Global Reach</h4>
+                        <p class="text-secondary small m-0">99 Edge locations active</p>
+                    </div>
+                    <div class="spinner-grow text-primary" role="status"></div>
+                </div>
+            </div>
+
+            <div class="bento-item" style="grid-column: span 2; background: linear-gradient(45deg, #0a0a0a, #1a1025);">
+                <div class="row align-items-center">
+                    <div class="col-8">
+                        <h4 class="mb-2">Interface Design</h4>
+                        <p class="text-secondary small mb-0">High-fidelity motion and tactile UI systems.</p>
+                    </div>
+                    <div class="col-4 text-end">
+                        <i class="bi bi-bezier2 fs-1 accent-purple"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    
+
+    <footer class="container py-5 mt-5">
+        <div class="bento-item d-flex justify-content-between align-items-center py-4 px-5">
+            <span class="text-secondary small">© 2025 ORBIT LABS</span>
+            <div class="d-flex gap-4">
+                <a href="#" class="text-white text-decoration-none small">Status</a>
+                <a href="#" class="text-white text-decoration-none small">API</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

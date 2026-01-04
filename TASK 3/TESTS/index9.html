@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITAN // Industrial Intelligence</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+        
+        :root { --accent: #facc15; --bg-dark: #070707; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg-dark); color: #fff; overflow-x: hidden; }
+
+        .sidebar-static { width: 100px; height: 100vh; position: fixed; left: 0; top: 0; background: #000; border-right: 1px solid rgba(255,255,255,0.05); z-index: 1000; display: flex; flex-column: column; align-items: center; padding: 40px 0; }
+        .main-container { margin-left: 100px; padding: 2.5rem; }
+
+        .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.5rem; }
+        .bento-card { background: #0e0e0e; border: 1px solid #1a1a1a; border-radius: 40px; padding: 2.5rem; position: relative; overflow: hidden; transition: 0.4s; }
+        .bento-card:hover { border-color: var(--accent); background: #121212; }
+
+        .hero-bento { grid-column: span 8; grid-row: span 2; display: flex; flex-direction: column; justify-content: space-between; }
+        .stat-bento { grid-column: span 4; }
+        .square-bento { grid-column: span 3; }
+        .long-bento { grid-column: span 6; }
+
+        .btn-titan { background: var(--accent); color: #000; font-weight: 700; border-radius: 20px; padding: 15px 35px; border: none; transition: 0.3s; }
+        .btn-titan:hover { background: #fff; transform: translateY(-5px); box-shadow: 0 10px 40px rgba(250, 204, 21, 0.2); }
+
+        .tag { background: rgba(255,255,255,0.05); padding: 8px 18px; border-radius: 100px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .pulse-indicator { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 15px var(--accent); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.5); opacity: 0.5; } 100% { transform: scale(1); opacity: 1; } }
+
+        @media (max-width: 992px) { 
+            .main-container { margin-left: 0; padding: 1.5rem; }
+            .sidebar-static { display: none; }
+            .hero-bento, .stat-bento, .square-bento, .long-bento { grid-column: span 12; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar-static">
+        <div class="mb-auto fw-bold fs-4 text-warning">T.</div>
+        <div class="d-flex flex-column gap-5 mb-auto">
+            <a href="#" class="text-white opacity-25"><i class="bi bi-grid-fill fs-4"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-lightning-charge-fill fs-4"></i></a>
+            <a href="#" class="text-white opacity-25"><i class="bi bi-gear-fill fs-4"></i></a>
+        </div>
+        <div class="pulse-indicator"></div>
+    </aside>
+
+    <main class="main-container">
+        <header class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h2 class="fw-bold m-0">CORE ENGINE</h2>
+                <p class="text-secondary small">System status: Normal / Node: Alpha-7</p>
+            </div>
+            <div class="d-flex gap-3">
+                <span class="tag">Dec 2025</span>
+                <span class="tag">v5.3.0</span>
+            </div>
+        </header>
+
+        <div class="bento-grid">
+            <div class="bento-card hero-bento border-0" style="background: linear-gradient(135deg, #151515 0%, #000 100%);">
+                <div class="d-flex justify-content-between">
+                    <h1 class="display-3 fw-bold">ORCHESTRATING<br><span class="text-warning">CHAOS.</span></h1>
+                    <i class="bi bi-arrow-up-right fs-1 text-secondary"></i>
+                </div>
+                <div>
+                    <p class="text-secondary fs-4 w-75 mb-5">Professional-grade intelligence for industrial automation and data synthesis.</p>
+                    <button class="btn btn-titan">Launch Protocol</button>
+                </div>
+            </div>
+
+            <div class="bento-card stat-bento">
+                <h6 class="text-secondary">NETWORK LOAD</h6>
+                <div class="display-4 fw-bold my-3">42.8<span class="fs-4 text-warning">%</span></div>
+                <div class="progress bg-dark" style="height: 6px;">
+                    <div class="progress-bar bg-warning" style="width: 42%"></div>
+                </div>
+            </div>
+
+            <div class="bento-card stat-bento">
+                <h6 class="text-secondary">ACTIVE NODES</h6>
+                <div class="display-4 fw-bold my-3">1,024</div>
+                <div class="d-flex gap-2">
+                    <i class="bi bi-circle-fill text-success small"></i>
+                    <span class="small text-secondary">All systems operational</span>
+                </div>
+            </div>
+
+            <div class="bento-card long-bento">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div>
+                        <h4>Data Stream</h4>
+                        <p class="text-secondary small">Real-time telemetry from edge devices</p>
+                    </div>
+                    <i class="bi bi-waveform fs-2 text-warning"></i>
+                </div>
+                <div class="d-flex gap-1 align-items-end mt-4" style="height: 80px;">
+                    <div class="bg-warning flex-grow-1 opacity-25" style="height: 40%"></div>
+                    <div class="bg-warning flex-grow-1 opacity-50" style="height: 70%"></div>
+                    <div class="bg-warning flex-grow-1" style="height: 100%"></div>
+                    <div class="bg-warning flex-grow-1 opacity-75" style="height: 60%"></div>
+                    <div class="bg-warning flex-grow-1 opacity-25" style="height: 30%"></div>
+                </div>
+            </div>
+
+            <div class="bento-card square-bento text-center">
+                <i class="bi bi-shield-lock fs-1 text-warning mb-3 d-block"></i>
+                <h5>Vault Access</h5>
+                <button class="btn btn-link text-white-50 text-decoration-none small">Configure</button>
+            </div>
+
+            <div class="bento-card square-bento">
+                <h5 class="mb-4">Live Logs</h5>
+                <div class="d-flex flex-column gap-2 small opacity-50">
+                    <div>> Init system...</div>
+                    <div>> Cache cleared</div>
+                    <div class="text-warning">> Sync active</div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-5 pt-5 border-top border-secondary border-opacity-10 text-center">
+            <p class="text-secondary small m-0">&copy; 2025 TITAN SYSTEMS / BUILT ON BOOTSTRAP 5.3 ENGINE</p>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
