@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State City Dropdown</title>
+</head>
+<body>
+    <h1>DROPDOWN FOR STATE</h1>
+
+    <select id="state" onchange="statecity()">
+        <option value="">---select state---</option>
+        <option value="gujarat">GUJARAT</option>
+        <option value="maharashtra">MAHARASHTRA</option>
+        <option value="rajasthan">RAJASTHAN</option>
+    </select><br><br>
+
+    <select id="city">
+        <option value="">---select city---</option>
+    </select>
+
+    <script>
+        function statecity() {
+    
+            state = document.getElementById("state").value;
+            cityDropdown = document.getElementById("city");
+
+            cityDropdown.innerHTML ='';
+
+            if (state === "gujarat") {
+                cityDropdown.innerHTML += "<option>ahmedabad</option>";
+                cityDropdown.innerHTML += "<option>surat</option>";
+                cityDropdown.innerHTML += "<option>rajkot</option>";
+                cityDropdown.innerHTML += "<option>gandhinagar</option>";
+            } 
+            else if (state === "maharashtra") {
+                cityDropdown.innerHTML += "<option>mumbai</option>";
+                cityDropdown.innerHTML += "<option>thane</option>";
+                cityDropdown.innerHTML += "<option>pune</option>";
+                cityDropdown.innerHTML += "<option>andheri</option>";
+            } 
+            else if (state === "rajasthan") {
+                cityDropdown.innerHTML += "<option>bharatpur</option>";
+                cityDropdown.innerHTML += "<option>jaipur</option>";
+                cityDropdown.innerHTML += "<option>udaipur</option>";
+            }
+        }
+    </script>
+</body>
+</html> 
