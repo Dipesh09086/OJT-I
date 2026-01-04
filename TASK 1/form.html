@@ -1,0 +1,108 @@
+<html>
+	<head>
+    		<title>form</title>
+	</head>
+	<body>
+	<form action="/submit-form" method="post">
+   	<h1>Application Form</h1>
+		<img src="https://tse4.mm.bing.net/th/id/OIP.KbnILwpWNicNHu03g0ve6AHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
+		 width="20%" height=26%">
+        <fieldset>
+            <b>Personal Details</b>
+            
+            <p>
+                <label for="fullName">Full Name:</label><br>
+                <input type="text" id="fullName" name="fullName" required>
+            </p>
+            
+            <p>
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required>
+            </p>
+            
+            <p>
+                <label for="dob">Date of Birth:</label><br>						
+        										
+                <input type="date" id="dob" name="dob">
+            </p>
+
+            <p>
+                <label for="phone">Phone Number:</label><br>
+                <input type="text" id="phone" name="phone">
+            </p>
+        </fieldset>
+
+        <hr>
+
+        <fieldset>
+            <b>Family Details</b>
+            
+            <p>
+                <label for="fatherName">Father's Name:</label><br>
+                <input type="text" id="fatherName" name="fatherName" required>
+            </p>
+            
+            <p>
+                <label for="motherName">Mother's Name:</label><br>
+                <input type="text" id="motherName" name="motherName" required>
+            </p>
+
+            <p>
+                <label for="maritalStatus">Marital Status:</label><br>
+                <select id="maritalStatus" name="maritalStatus">
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="widowed">Widowed</option>
+                </select>
+            </p>
+        </fieldset>
+
+        <hr>
+
+        <fieldset>
+            <b>Educational Qualification</b>
+            
+            <p>
+                <label for="highSchool">High School/10th Grade Percentage:</label><br>
+                <input type="text" id="highSchool" name="highSchool">
+            </p>
+            
+            <p>
+                <label for="intermediate">Intermediate/12th Grade Percentage:</label><br>
+                <input type="text" id="intermediate" name="intermediate">
+            </p>
+
+            <p>
+                <label for="degree">Highest Degree/Diploma:</label><br>
+                <input type="text" id="degree" name="degree">
+            </p>
+            
+            <p>
+                <label for="graduationYear">Year of Graduation (Highest Degree):</label><br>
+                <input type="text" id="graduationYear" name="graduationYear">
+            </p>
+        </fieldset>
+
+        <hr>
+
+        <fieldset>
+            <b>Other Information / Declaration</b>
+            
+            <p>
+                <label for="otherInfo">Please mention any relevant skills or hobbies (Optional):</label><br>
+                <textarea id="otherInfo" name="otherInfo" rows="4" cols="50"></textarea>
+            </p>
+            
+            <p>
+                <input type="checkbox" id="declaration" name="declaration" required>
+                <label for="declaration">I hereby declare that the above information is true and correct.</label>
+            </p>
+        </fieldset>
+
+       <button type="submit"><b>Submit Application</b></button>
+
+	 </form>
+
+</body>
+</html>
